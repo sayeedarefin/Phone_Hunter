@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter API</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header>
+        <h2 class="text-6xl">Phone Hunter</h2>
+    </header>
+    <main class="container mx-auto mt-8 p-10">
+
+        <section class="bg-gray-400 p-4 m-8">
+            <label class="input input-bordered flex items-center gap-2">
+                <input id="search-field" type="text" class="grow" placeholder="Search" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-4 w-4 opacity-70">
+                  <path
+                    fill-rule="evenodd"
+                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                    clip-rule="evenodd" />
+                </svg>
+                <button onclick="handleSearch()" class="btn btn-accent mr-0">Search</button>
+              </label>
+
+        </section>
+
+
+
+
+        <!-- search result -->
+        <section>
+            <!-- loading spinner -->
+
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner text-accent"></span>
+
+            </div>
+
+
+            <div id="phone-container" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                
+            </div>
+
+            <!-- show all button -->
+             <div id="show-all-container" class="hidden text-center my-8">
+                <button onclick="handleShowAll()" class="btn btn-accent mr-0">Show All</button>
+             </div>
+        </section>
+
+        <!-- show modal section -->
+         <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="show_detail_modal.showModal()">open modal</button> -->
+<dialog id="show_detail_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 id="show-detail-phone-name" class="text-3xl font-bold">Hello!</h3>
+    <div id="show-detail-container">
+
+    </div>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    </main>
+    <footer>
+
+    </footer>
+
+
+    <script src="phone.js"></script>
+</body>
+</html>
